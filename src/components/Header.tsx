@@ -19,7 +19,6 @@ import logo from "../assets/logo.png";
 const DesktopNav = ({items}: {items: NavItem[]}) => {
     const linkColor = 'gray.600';
     const linkHoverColor = 'gray.800';
-    const popoverContentBgColor = 'white'
 
     return (
         <Stack direction={'row'} gap={4}>
@@ -59,8 +58,6 @@ const MobileNav = ({items}: {items: NavItem[]}) => {
 }
 
 const MobileNavItem = ({ label, ref }: NavItem) => {
-    const { open, onToggle } = useDisclosure()
-
     return (
         <Stack gap={4} >
             <Link

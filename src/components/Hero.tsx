@@ -8,14 +8,12 @@ import {
     Stack,
     Text
 } from '@chakra-ui/react';
-import { useTheme } from '@emotion/react';
 import { motion } from "framer-motion";
 import { slideUp } from '../animations/AnimationStyles';
 import './Hero.css';
 
 
 export default function Hero({productRef}: {productRef: any}) {
-    const theme = useTheme();
     return (
         <Box className='rotated-bg'>
             <Container maxW="4xl" minHeight={'100vh'}>

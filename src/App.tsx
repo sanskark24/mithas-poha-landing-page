@@ -18,9 +18,6 @@ function App() {
   const commitmentRef = useRef(null);
   const testimonialRef = useRef(null);
   const contactRef = useRef(null);
-  const scrollToSection = (ref: any) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
-  };
   const NAV_ITEMS: Array<NavItem> = [
     {
       label: 'Home',

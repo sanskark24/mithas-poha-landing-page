@@ -23,7 +23,7 @@ export default function Contact() {
     const [message, setMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const isValid = () => {
-        return name && phoneNumber && phoneNumber.length == 10;
+        return name && phoneNumber && phoneNumber.length === 10;
     }
 
     const handleSubmit = async () => {
