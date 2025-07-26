@@ -32,8 +32,8 @@ function Product({ name, image, description }: IProduct) {
 export default function Products() {
     return (
         <Box bg={"#DFF1FE"} w={'100%'} className="section">
-            <SlideUp>
-                <Container maxW="6xl" >
+            <Container maxW="6xl" >
+                <SlideUp>
                     <Box textAlign={'center'} marginBottom={10}>
                         <Heading fontWeight={700} fontSize={{ base: '4xl' }}>
                             Our Signature Poha Selection
@@ -45,29 +45,34 @@ export default function Products() {
                             Catering to every taste and culinary need, from homes to hotels.
                         </Heading>
                     </Box>
-                    <Stack direction={{ base: 'column', md: 'row' }}>
+                </SlideUp>
+                <Stack direction={{ base: 'column', md: 'row' }}>
+                    <SlideUp>
                         <Flex justify="around">
                             <Product
                                 name="Breakfast Special Poha"
                                 image={patla}
                                 description="Our Patla Poha is light, fluffy, and perfect for a quick, wholesome start to your day. Loved by families across India." />
                         </Flex>
+                    </SlideUp>
+                    <SlideUp>
                         <Flex justify="around">
                             <Product
                                 name="Hotel Special Poha"
                                 image={hotel}
                                 description="The preferred choice of chefs for its consistent quality, superior texture, and ability to absorb flavors beautifully in bulk preparations." />
                         </Flex>
+                    </SlideUp>
+                    <SlideUp>
                         <Flex justify="around">
                             <Product
                                 name="Namkeen Special Poha"
                                 image={mota}
                                 description="Crispy, versatile, and ideal for creating your favorite savory snacks (namkeen). Adds the perfect crunch and taste." />
                         </Flex>
-                    </Stack>
-                </Container>
-            </SlideUp>
-        </Box>
-
+                    </SlideUp>
+                </Stack>
+            </Container>
+        </Box >
     );
 }

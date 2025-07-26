@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Helmet } from "react-helmet";
 import './App.css';
 import Contact from './components/Contact';
 import Features from './components/Features';
@@ -10,7 +11,6 @@ import OurHeritage from './components/OurHeritage';
 import Products from './components/Products';
 import Testimonials from './components/Testimonials';
 import Whatsapp from './components/Whatsapp';
-
 
 function App() {
   const homeRef = useRef(null);
@@ -44,6 +44,12 @@ function App() {
   ]
   return (
     <>
+    <Helmet>
+  <title>Premium Poha Manufacturer | Mithas Poha by Khandelwal Industries</title>
+  <meta name="description" content="Mithas Poha – India's finest premium quality poha, directly from Khandelwal Industries. Fresh, nutritious, and naturally processed." />
+  <meta name="keywords" content="Poha manufacturer, premium poha, Khandelwal Industries, Indian poha, flattened rice" />
+  <link rel="canonical" href="https://mithaspoha.in" />
+</Helmet>
       <Header items={NAV_ITEMS}></Header>
       <section ref={homeRef}>
         <Hero productRef={productsRef}></Hero>
