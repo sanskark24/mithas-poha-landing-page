@@ -3,7 +3,7 @@ import SlideUp from "../animations/SlideUp";
 import hotel from "../assets/hotel.jpg";
 import mota from "../assets/mota.jpeg";
 import patla from "../assets/patla.jpg";
-
+import packing from "../assets/packing.jpg";
 interface IProduct {
     name: string;
     image: string;
@@ -47,6 +47,14 @@ export default function Products() {
                     </Box>
                 </SlideUp>
                 <Stack direction={{ base: 'column', md: 'row' }}>
+                    <SlideUp>
+                        <Flex justify="around">
+                            <Product
+                                name="Mithas 1KG Poha"
+                                image={packing}
+                                description="Our Mithas Packing Poha is Indore's famous poha which is great in taste , high in protein " />
+                        </Flex>
+                    </SlideUp>
                     <SlideUp>
                         <Flex justify="around">
                             <Product
