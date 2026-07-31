@@ -9,9 +9,9 @@ import {
 } from "@chakra-ui/react";
 import SlideUp from "../animations/SlideUp";
 import hotel from "../assets/hotel.jpg";
-import mota from "../assets/mota.jpg";
+import mota from "../assets/mota.png";
 import patla from "../assets/patla.jpg";
-import packing from "../assets/packing.jpg";
+import packing from "../assets/packing.jpeg";
 
 interface IProduct {
     name: string;
