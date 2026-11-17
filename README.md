@@ -23,4 +23,4 @@ The production site is written to `dist/`.
 
 In the repository settings, open **Pages** and set the source to **GitHub Actions**. Push changes to the `production` branch to run `.github/workflows/deploy-pages.yml`; the workflow builds and deploys the site automatically.
 
-The site will be available at [https://casware-org.github.io/mithas-poha-landing-page/](https://casware-org.github.io/mithas-poha-landing-page/).
+The site will be available at [https://sanskark24.github.io/mithas-poha-landing-page/](https://sanskark24.github.io/mithas-poha-landing-page/).
