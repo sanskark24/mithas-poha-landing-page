@@ -8,7 +8,7 @@ export default function ProductDetails({ slug }: { slug: string }) {
       <Container maxW="4xl" py={{ base: 16, md: 24 }}>
         <Text color="#a35c15" textTransform="uppercase" letterSpacing="0.16em" fontWeight="bold">Product not found</Text>
         <Heading mt={3}>We couldn’t find that selection.</Heading>
-        <Link href="/#products" color="#a35c15" mt={6} display="inline-block">← Back to all poha</Link>
+        <Link href={`${import.meta.env.BASE_URL}#products`} color="#a35c15" mt={6} display="inline-block">← Back to all poha</Link>
       </Container>
     );
   }
@@ -18,7 +18,7 @@ export default function ProductDetails({ slug }: { slug: string }) {
   return (
     <Box bg="#fffdf7" minH="70vh" py={{ base: 10, md: 16 }}>
       <Container maxW="6xl" px={{ base: 4, md: 8 }}>
-        <Link href="/#products" color="#94520f" fontWeight="semibold">← All products</Link>
+        <Link href={`${import.meta.env.BASE_URL}#products`} color="#94520f" fontWeight="semibold">← All products</Link>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 8, md: 14 }} alignItems="center" mt={8}>
           <Box bg="#f7f3e9" borderRadius="3xl" minH={{ base: "300px", md: "510px" }} p={{ base: 5, md: 10 }} display="grid" placeItems="center">
             <Image src={product.image} alt={product.name} maxH={{ base: "280px", md: "440px" }} w="100%" objectFit="contain" />
@@ -27,8 +27,8 @@ export default function ProductDetails({ slug }: { slug: string }) {
             <Text color="#a35c15" textTransform="uppercase" letterSpacing="0.2em" fontWeight="bold">{product.brand}</Text>
             <Heading as="h1" size={{ base: "2xl", md: "4xl" }} color="gray.900">{product.name}</Heading>
             <Text color="gray.600" fontSize={{ base: "md", md: "lg" }} lineHeight="tall">{product.description}</Text>
-            <Button as="a" href={enquiry} target="_blank" rel="noreferrer" colorPalette="orange" size="lg" rounded="full">
-              Enquire about this product
+            <Button asChild colorPalette="orange" size="lg" rounded="full">
+              <a href={enquiry} target="_blank" rel="noreferrer">Enquire about this product</a>
             </Button>
           </Stack>
         </SimpleGrid>

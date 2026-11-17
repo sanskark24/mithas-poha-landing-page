@@ -28,8 +28,8 @@ function ProductCard({ product }: { product: PohaProduct }) {
         <Text color="gray.600" fontSize="sm" lineHeight="tall" minH={{ md: "4.5rem" }}>
           {product.description}
         </Text>
-        <Button as="a" href={`/products/${product.slug}`} variant="outline" colorPalette="orange" mt={1}>
-          View Details <span aria-hidden="true">→</span>
+        <Button asChild variant="outline" colorPalette="orange" mt={1}>
+          <a href={`${import.meta.env.BASE_URL}products/${product.slug}`}>View Details <span aria-hidden="true">→</span></a>
         </Button>
       </Stack>
     </Box>

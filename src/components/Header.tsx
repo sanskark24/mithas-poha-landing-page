@@ -23,7 +23,7 @@ const DesktopNav = ({items}: {items: NavItem[]}) => {
             {items.map((navItem) => (
                 <Box key={navItem.label}>
                     <Link
-                        href={`/#${navItem.id}`}
+                        href={`${import.meta.env.BASE_URL}#${navItem.id}`}
                         p={2}
                         onClick={(event) => {
                             if (navItem.ref?.current) {
@@ -59,7 +59,7 @@ const MobileNavItem = ({ item, onNavigate }: {item: NavItem; onNavigate: () => v
     return (
         <Stack gap={4} >
             <Link
-                href={`/#${item.id}`}
+                href={`${import.meta.env.BASE_URL}#${item.id}`}
                 py={2}
                 onClick={(event) => {
                     onNavigate();

@@ -54,8 +54,12 @@ function App() {
       ref: contactRef
     },
   ]
-  const productSlug = window.location.pathname.startsWith('/products/')
-    ? window.location.pathname.slice('/products/'.length).replace(/\/$/, '')
+  const basePath = import.meta.env.BASE_URL;
+  const routePath = window.location.pathname.startsWith(basePath)
+    ? window.location.pathname.slice(basePath.length)
+    : window.location.pathname.replace(/^\//, '');
+  const productSlug = routePath.startsWith('products/')
+    ? routePath.slice('products/'.length).replace(/\/$/, '')
     : null;
   const currentProduct = products.find((product) => product.slug === productSlug);
 
