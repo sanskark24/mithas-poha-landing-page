@@ -18,20 +18,21 @@ export default function OurCommitment() {
     <Box className="section">
       <Container maxW="6xl">
         <Stack direction={{ base: 'column', md: 'row' }}>
-          <Flex flex={1} mx={10}>
+          <Flex flex={1} mx={{ base: 0, md: 10 }}>
             <SlideRight>
               <Box bg={'white'} boxShadow="md" paddingRight={5} paddingLeft={5} borderRadius={'md'}>
                 <Image
                   alt="Login Image"
-                  objectFit="fit"
-                  width={400}
+                  objectFit="contain"
+                  width="100%"
+                  maxW="400px"
                   src={Poha}
                 />
               </Box>
             </SlideRight>
 
           </Flex>
-          <Flex p={8} flex={1} align="center" justify="center">
+          <Flex p={{ base: 4, md: 8 }} flex={1} align="center" justify="center">
             <SlideLeft>
               <Stack gap={6} w="full" maxW="lg">
                 <Box>

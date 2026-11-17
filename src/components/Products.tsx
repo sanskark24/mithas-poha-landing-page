@@ -55,7 +55,7 @@ function BrandSelection({ brand, items }: { brand: PohaProduct["brand"]; items: 
         </Box>
         <Text color="gray.600" fontWeight="semibold">{items.length} Products</Text>
       </Stack>
-      <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} gap={{ base: 5, md: 7 }}>
+      <SimpleGrid columns={{ base: 2, lg: 3 }} gap={{ base: 3, md: 7 }}>
         {items.map((product, index) => (
           <SlideUp key={product.slug} delay={index * 0.06}>
             <ProductCard product={product} />

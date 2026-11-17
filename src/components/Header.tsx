@@ -108,8 +108,8 @@ export default function Header({items}: IHeaderProps) {
                         aria-label="Toggle Navigation"
                     >
                         {open
-                            ? <FaTimes size={12} />
-                            : <FaBars size={12} />
+                            ? <FaTimes size={16} />
+                            : <FaBars size={16} />
                         }
 
                     </IconButton>

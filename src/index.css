@@ -1,10 +1,15 @@
 body {
   margin: 0;
+  overflow-x: clip;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  overflow-x: clip;
 }
 
 code {
@@ -19,6 +24,18 @@ code {
 
 .fixed-btn:hover {
   transform: scale(1.08);
+}
+
+.fixed-btn svg {
+  width: 48px;
+  height: 48px;
+}
+
+@media (max-width: 480px) {
+  .fixed-btn svg {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .site-splash {

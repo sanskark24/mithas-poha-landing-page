@@ -1,6 +1,5 @@
-import { Box, Container, Heading, Image, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, Container, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import SlideUp from "../animations/SlideUp";
-import trustPhoto from "../assets/trust.jpg";
 
 const reasons = [
   {
@@ -60,27 +59,7 @@ export default function WhyChooseMithas() {
   return (
     <Box as="section" id="why-mithas" bg="#fffdf7" py={{ base: 16, md: 24 }} overflow="hidden">
       <Container maxW="7xl" px={{ base: 4, md: 8 }}>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 10, md: 16 }} alignItems="center">
-          <SlideUp>
-            <Box
-              aspectRatio={{ base: "4 / 5", md: "4 / 5" }}
-              maxH="620px"
-              overflow="hidden"
-              borderRadius="3xl"
-              bg="#f7f3e9"
-              boxShadow="xl"
-            >
-              <Image
-                src={trustPhoto}
-                alt="A chef holding a pack of Mithas Poha"
-                w="100%"
-                h="100%"
-                objectFit="cover"
-                objectPosition="center 20%"
-              />
-            </Box>
-          </SlideUp>
-
+        <Box maxW="4xl" mx="auto">
           <SlideUp delay={0.12}>
             <Stack gap={5}>
               <Text color="#a35c15" textTransform="uppercase" letterSpacing="0.18em" fontSize="sm" fontWeight="bold">
@@ -104,7 +83,7 @@ export default function WhyChooseMithas() {
               </Text>
             </Stack>
           </SlideUp>
-        </SimpleGrid>
+        </Box>
 
         <Box mt={{ base: 16, md: 24 }}>
           <SlideUp>
@@ -117,7 +96,7 @@ export default function WhyChooseMithas() {
               </Heading>
             </Stack>
           </SlideUp>
-          <SimpleGrid columns={{ base: 1, sm: 2, lg: 4 }} gap={5}>
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={5}>
             {reasons.map((reason, index) => (
               <SlideUp key={reason.title} delay={index * 0.06}>
                 <Box
@@ -168,7 +147,7 @@ export default function WhyChooseMithas() {
               <Text color="#a35c15" textTransform="uppercase" letterSpacing="0.16em" fontSize="sm" fontWeight="bold">
                 Our range of premium poha
               </Text>
-              <SimpleGrid columns={{ base: 1, sm: 2 }} gap={5} mt={5}>
+              <SimpleGrid columns={{ base: 1, md: 2 }} gap={5} mt={5}>
                 {varieties.map((variety) => (
                   <Box key={variety.name}>
                     <Heading as="h4" size="sm" color="gray.900">{variety.name}</Heading>

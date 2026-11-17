@@ -139,7 +139,7 @@ export default function OurJourney() {
               </Heading>
             </Stack>
           </SlideUp>
-          <SimpleGrid columns={{ base: 1, sm: 2, lg: 5 }} gap={4}>
+          <SimpleGrid columns={{ base: 1, md: 2, lg: 5 }} gap={4}>
             {commitments.map((item, index) => (
               <SlideUp key={item.title} delay={index * 0.06}>
                 <Box

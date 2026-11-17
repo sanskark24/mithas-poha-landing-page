@@ -18,12 +18,12 @@ export default function Hero({productRef}: {productRef: any}) {
 
     return (
         <Box className='rotated-bg'>
-            <Container maxW="4xl" minHeight={'100vh'}>
+            <Container maxW="4xl" minHeight={{ base: 'auto', md: '100vh' }} px={{ base: 4, md: 8 }}>
                 <Stack
                     as={Box}
                     textAlign="center"
-                    gap={{ base: 8, md: 14 }}
-                    py={{ base: 20, md: 36 }}
+                    gap={{ base: 6, md: 14 }}
+                    py={{ base: 12, md: 36 }}
 
                 >
                     <motion.div
@@ -32,19 +32,19 @@ export default function Hero({productRef}: {productRef: any}) {
                         animate="visible"
                     >
                         <Box style={{ boxShadow: '0px 0px 40px 40px #000000;' }}
-                            padding={{base: 5, md: 10}}
+                            padding={{base: 4, md: 10}}
                             bg={'#ffffff80'}
                             animationDuration="slow"
                             animationStyle={{ _open: "slide-fade-in", _closed: "slide-fade-out" }}
                         >
                             <Box>
-                                <Heading fontWeight={800} fontSize={{ base: 'lg' }} className='gradient-text'>
+                                <Heading fontWeight={800} fontSize={{ base: 'md', sm: 'lg' }} className='gradient-text'>
                                     Welcome to Mithas Poha
                                 </Heading>
                                 <Heading
                                     fontWeight={800}
-                                    fontSize={{ base: '4xl', sm: '5xl', md: '6xl' }}
-                                    lineHeight="110%"
+                                    fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
+                                    lineHeight="shorter"
                                 >
                                     Savor the
                                     <Text as="span" className='gradient-text'>
@@ -53,7 +53,7 @@ export default function Hero({productRef}: {productRef: any}) {
                                     of India's Finest Poha
                                 </Heading>
                             </Box>
-                            <Text fontSize='lg' color="gray.500" px={10}>
+                            <Text fontSize={{ base: 'md', md: 'lg' }} color="gray.500" px={{ base: 0, md: 10 }}>
                                 Crafted with tradition by Khandelwal Industries, Ujjain. Pure, nutritious, and irresistibly delicious – the perfect start to your day, every day.
                             </Text>
                             <Stack

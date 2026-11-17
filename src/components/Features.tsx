@@ -13,7 +13,7 @@ function Feature({ name, icon, description, color }: ITestimonial) {
             shadow={'md'}
             variant={'elevated'}
             border={'none'}
-            width="320px"
+            width={{ base: '100%', md: '320px' }}
             rounded="4xl"
             transition="transform 0.3s ease, box-shadow 0.3s ease"
             _hover={{ transform: "translateY(-8px)", boxShadow: "xl" }}
@@ -41,7 +41,7 @@ function Feature({ name, icon, description, color }: ITestimonial) {
 export default function Features() {
     return (
         <Box w={'100%'} className="section" >
-            <Container maxW="7xl" >
+            <Container maxW="7xl" px={{ base: 4, md: 8 }}>
                 <SlideUp>
                     <Stack textAlign={'center'} marginBottom={10} w={'100%'}>
                         <Heading fontWeight={700} fontSize={{ base: '4xl' }}>
