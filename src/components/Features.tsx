@@ -9,7 +9,15 @@ interface ITestimonial {
 }
 function Feature({ name, icon, description, color }: ITestimonial) {
     return (
-        <Card.Root shadow={'md'} variant={'elevated'} border={'none'} width="320px" rounded="4xl">
+        <Card.Root
+            shadow={'md'}
+            variant={'elevated'}
+            border={'none'}
+            width="320px"
+            rounded="4xl"
+            transition="transform 0.3s ease, box-shadow 0.3s ease"
+            _hover={{ transform: "translateY(-8px)", boxShadow: "xl" }}
+        >
             <Card.Body>
                 <Flex
                     w={16}

@@ -1,4 +1,7 @@
 import { Box, Button, Container, Heading, Image, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import SlideLeft from "../animations/SlideLeft";
+import SlideRight from "../animations/SlideRight";
+import SlideUp from "../animations/SlideUp";
 import { products } from "../data/products";
 
 export default function ProductDetails({ slug }: { slug: string }) {
@@ -20,32 +23,49 @@ export default function ProductDetails({ slug }: { slug: string }) {
       <Container maxW="6xl" px={{ base: 4, md: 8 }}>
         <Link href={`${import.meta.env.BASE_URL}#products`} color="#94520f" fontWeight="semibold">← All products</Link>
         <SimpleGrid columns={{ base: 1, md: 2 }} gap={{ base: 8, md: 14 }} alignItems="center" mt={8}>
-          <Box bg="#f7f3e9" borderRadius="3xl" minH={{ base: "300px", md: "510px" }} p={{ base: 5, md: 10 }} display="grid" placeItems="center">
-            <Image src={product.image} alt={product.name} maxH={{ base: "280px", md: "440px" }} w="100%" objectFit="contain" />
-          </Box>
+          <SlideRight>
+            <Box bg="#f7f3e9" borderRadius="3xl" minH={{ base: "300px", md: "510px" }} p={{ base: 5, md: 10 }} display="grid" placeItems="center">
+              <Image src={product.image} alt={product.name} maxH={{ base: "280px", md: "440px" }} w="100%" objectFit="contain" />
+            </Box>
+          </SlideRight>
+          <SlideLeft>
           <Stack align="flex-start" gap={5}>
             <Text color="#a35c15" textTransform="uppercase" letterSpacing="0.2em" fontWeight="bold">{product.brand}</Text>
-            <Heading as="h1" size={{ base: "2xl", md: "4xl" }} color="gray.900">{product.name}</Heading>
+            <Heading as="h1" size={{ base: "2xl", md: "4xl" }} fontWeight="800" color="gray.900">{product.name}</Heading>
             <Text color="gray.600" fontSize={{ base: "md", md: "lg" }} lineHeight="tall">{product.description}</Text>
-            <Button asChild colorPalette="orange" size="lg" rounded="full">
+            <Button
+              asChild
+              colorPalette="orange"
+              size="lg"
+              rounded="full"
+              transition="transform 0.2s ease, box-shadow 0.2s ease"
+              _hover={{ transform: "translateY(-2px)", boxShadow: "lg" }}
+            >
               <a href={enquiry} target="_blank" rel="noreferrer">Enquire about this product</a>
             </Button>
           </Stack>
+          </SlideLeft>
         </SimpleGrid>
 
         <SimpleGrid columns={{ base: 1, md: 3 }} gap={8} mt={{ base: 12, md: 20 }}>
+          <SlideUp>
           <Box>
             <Heading as="h2" size="md" mb={4}>Key features</Heading>
             <Stack gap={3}>{product.features.map((feature) => <Text key={feature} color="gray.600">• {feature}</Text>)}</Stack>
           </Box>
+          </SlideUp>
+          <SlideUp delay={0.1}>
           <Box>
             <Heading as="h2" size="md" mb={4}>Suitable applications</Heading>
             <Stack gap={3}>{product.applications.map((application) => <Text key={application} color="gray.600">• {application}</Text>)}</Stack>
           </Box>
+          </SlideUp>
+          <SlideUp delay={0.2}>
           <Box>
             <Heading as="h2" size="md" mb={4}>Packaging</Heading>
             <Text color="gray.600" lineHeight="tall">{product.packaging}</Text>
           </Box>
+          </SlideUp>
         </SimpleGrid>
       </Container>
     </Box>

@@ -106,7 +106,8 @@ export default function Contact() {
                         rounded="md"
                         px={8}
                         py={6}
-                        _hover={{ bg: 'yellow.500' }}
+                        transition="transform 0.2s ease, box-shadow 0.2s ease"
+                        _hover={{ bg: 'yellow.500', transform: "translateY(-2px)", boxShadow: "lg" }}
                         fontWeight={800}
                         fontSize={'lg'}
                         onClick={handleSubmit}

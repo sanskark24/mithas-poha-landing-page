@@ -35,7 +35,8 @@ const DesktopNav = ({items}: {items: NavItem[]}) => {
                         fontWeight={500}
                         color={linkColor}
                         whiteSpace="nowrap"
-                        _hover={{ textDecoration: 'none', color: linkHoverColor }}
+                        transition="color 0.2s ease, transform 0.2s ease"
+                        _hover={{ textDecoration: 'none', color: linkHoverColor, transform: "translateY(-2px)" }}
                     >
                         {navItem.label}
                     </Link>
@@ -114,12 +115,21 @@ export default function Header({items}: IHeaderProps) {
                     </IconButton>
                 </Flex>
                 <Flex flex={1} justify={{ base: 'center', md: 'start' }}>
-                    <Image
-                        src={logo}
-                        fontFamily="heading"
-                        color={'gray.800'}
-                        width={100}
-                    />
+                    <Link
+                        href={import.meta.env.BASE_URL}
+                        aria-label="Mithas Poha home"
+                        display="inline-flex"
+                        transition="transform 0.25s ease"
+                        _hover={{ transform: "scale(1.06)" }}
+                    >
+                        <Image
+                            src={logo}
+                            alt="Mithas Poha"
+                            fontFamily="heading"
+                            color={'gray.800'}
+                            width={100}
+                        />
+                    </Link>
 
                 </Flex>
                 <Stack flex={{ base: 1, md: 0 }} direction="row" gap={4} display={{ base: 'none', md: 'flex' }} justify="end">

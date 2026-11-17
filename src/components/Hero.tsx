@@ -8,12 +8,14 @@ import {
     Stack,
     Text
 } from '@chakra-ui/react';
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { slideUp } from '../animations/AnimationStyles';
 import './Hero.css';
 
 
 export default function Hero({productRef}: {productRef: any}) {
+    const reduceMotion = useReducedMotion();
+
     return (
         <Box className='rotated-bg'>
             <Container maxW="4xl" minHeight={'100vh'}>
@@ -26,7 +28,7 @@ export default function Hero({productRef}: {productRef: any}) {
                 >
                     <motion.div
                         variants={slideUp}
-                        initial="hidden"
+                        initial={reduceMotion ? false : "hidden"}
                         animate="visible"
                     >
                         <Box style={{ boxShadow: '0px 0px 40px 40px #000000;' }}
@@ -65,7 +67,8 @@ export default function Hero({productRef}: {productRef: any}) {
                                     rounded="full"
                                     px={8}
                                     py={6}
-                                    _hover={{ bg: 'yellow.500' }}
+                                    transition="transform 0.2s ease, box-shadow 0.2s ease"
+                                    _hover={{ bg: 'yellow.500', transform: "translateY(-3px)", boxShadow: "lg" }}
                                     fontWeight={800}
                                     fontSize={'lg'}
                                     onClick={()=> productRef.current.scrollIntoView({ behavior: 'smooth' })}

@@ -6,9 +6,11 @@ import {
     Text
 } from '@chakra-ui/react';
 import logo from "../assets/logo.png";
+import SlideUp from "../animations/SlideUp";
 
 export default function Footer() {
     return (
+        <SlideUp>
         <Stack
             w={'100%'}
             bg={'#1E293B'}
@@ -33,5 +35,6 @@ export default function Footer() {
 
             </Stack>
         </Stack>
+        </SlideUp>
     )
 }

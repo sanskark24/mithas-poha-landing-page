@@ -9,7 +9,12 @@ interface ITestimonial {
 }
 function Testimonial({ name, designation, description, color }: ITestimonial) {
     return (
-        <Card.Root width="320px" rounded="4xl">
+        <Card.Root
+            width="320px"
+            rounded="4xl"
+            transition="transform 0.3s ease, box-shadow 0.3s ease"
+            _hover={{ transform: "translateY(-8px)", boxShadow: "xl" }}
+        >
             <Card.Body>
                 <HStack mb="6" gap="3">
                     <Avatar.Root variant={'solid'} colorPalette={color}>

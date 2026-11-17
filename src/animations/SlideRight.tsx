@@ -1,14 +1,17 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import type { ReactNode } from "react";
 
-export default function SlideUp({ ...props }) {
+export default function SlideRight({ children }: { children: ReactNode }) {
+    const reduceMotion = useReducedMotion();
+
     return (
         <motion.div
-            initial={{ opacity: 0, x: -20 }} // Initial state (hidden and slightly below)
-            whileInView={{ opacity: 1, x: 0 }} // Animate to visible and original position
-            viewport={{ once: true, amount: 0.5 }} // Trigger once when 50% in view
-            transition={{ duration: 0.8 }}
+            initial={reduceMotion ? false : { opacity: 0, x: -28 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 90, damping: 20 }}
         >
-            {props.children}
+            {children}
         </motion.div>
     );
 }

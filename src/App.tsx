@@ -9,9 +9,12 @@ import Header, { NavItem } from './components/Header';
 import Hero from './components/Hero';
 import OurCommitment from './components/OurCommitment';
 import OurHeritage from './components/OurHeritage';
+import OurJourney from './components/OurJourney';
 import Products from './components/Products';
 import ProductDetails from './components/ProductDetails';
+import SplashScreen from './components/SplashScreen';
 import Testimonials from './components/Testimonials';
+import WhyChooseMithas from './components/WhyChooseMithas';
 import Whatsapp from './components/Whatsapp';
 import { products } from './data/products';
 
@@ -21,6 +24,7 @@ function App() {
   const commitmentRef = useRef<HTMLElement | null>(null);
   const testimonialRef = useRef<HTMLElement | null>(null);
   const visionRef = useRef<HTMLElement | null>(null);
+  const journeyRef = useRef<HTMLElement | null>(null);
   const contactRef = useRef<HTMLElement | null>(null);
   const NAV_ITEMS: Array<NavItem> = [
     {
@@ -49,6 +53,11 @@ function App() {
       ref: visionRef
     },
     {
+      label: 'Our Journey',
+      id: 'our-journey',
+      ref: journeyRef
+    },
+    {
       label: 'Contact',
       id: 'contact',
       ref: contactRef
@@ -65,6 +74,7 @@ function App() {
 
   return (
     <>
+    <SplashScreen />
     <Helmet>
   <title>{currentProduct ? `${currentProduct.name} | ${currentProduct.brand} Poha` : productSlug ? 'Poha Product Details | Mithas Poha' : 'Premium Poha Manufacturer | Mithas Poha by Khandelwal Industries'}</title>
   <meta name="description" content="Mithas Poha – India's finest premium quality poha, directly from Khandelwal Industries. Fresh, nutritious, and naturally processed." />
@@ -83,12 +93,16 @@ function App() {
           <section ref={productsRef}>
             <Products></Products>
           </section>
+          <WhyChooseMithas />
           <section id="quality" ref={commitmentRef}>
             <OurCommitment></OurCommitment>
           </section>
           <section id="testimonials" ref={testimonialRef}>
             <Testimonials></Testimonials>
             <OurHeritage></OurHeritage>
+          </section>
+          <section ref={journeyRef}>
+            <OurJourney />
           </section>
           <section ref={visionRef}>
             <DirectorsVision />

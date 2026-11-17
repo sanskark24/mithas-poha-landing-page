@@ -15,14 +15,21 @@ function ProductCard({ product }: { product: PohaProduct }) {
       transition="transform 0.25s ease, box-shadow 0.25s ease"
       _hover={{ transform: "translateY(-5px)", boxShadow: "xl" }}
     >
-      <Box bg="#f7f3e9" h={{ base: "220px", md: "240px" }} p={4}>
+      <Box bg="#f7f3e9" h={{ base: "220px", md: "240px" }}>
         <Image src={product.image} alt={product.name} w="100%" h="100%" objectFit="contain" />
       </Box>
       <Stack align="flex-start" gap={3} p={{ base: 5, md: 6 }}>
-        <Text textTransform="uppercase" letterSpacing="0.14em" fontSize="xs" fontWeight="bold" color="#a35c15">
+        <Text
+          textTransform="uppercase"
+          letterSpacing="0.14em"
+          fontSize={product.brand === "Mithas" ? "sm" : "xs"}
+          fontFamily={product.brand === "Mithas" ? "serif" : "inherit"}
+          fontWeight="800"
+          color={product.brand === "Mithas" ? "#c62828" : "#a35c15"}
+        >
           {product.brand}
         </Text>
-        <Heading as="h3" size="md" color="gray.900" minH={{ md: "3.5rem" }}>
+        <Heading as="h3" size="md" fontWeight="800" color="gray.900" minH={{ md: "3.5rem" }}>
           {product.name}
         </Heading>
         <Text color="gray.600" fontSize="sm" lineHeight="tall" minH={{ md: "4.5rem" }}>
@@ -39,12 +46,12 @@ function ProductCard({ product }: { product: PohaProduct }) {
 function BrandSelection({ brand, items }: { brand: PohaProduct["brand"]; items: PohaProduct[] }) {
   return (
     <Box as="section" mt={{ base: 12, md: 16 }}>
-      <Stack direction={{ base: "column", sm: "row" }} align={{ sm: "end" }} justify="space-between" mb={7} gap={2}>
-        <Box>
+      <Stack align="center" mb={7} gap={2}>
+        <Box textAlign="center">
           <Text color="#a35c15" textTransform="uppercase" letterSpacing="0.18em" fontSize="sm" fontWeight="bold">
             {brand === "Mithas" ? "Our signature range" : "A second house selection"}
           </Text>
-          <Heading as="h2" mt={2} size={{ base: "xl", md: "2xl" }} color="gray.900">{brand}</Heading>
+          <Heading as="h2" mt={2} size={{ base: "2xl", md: "4xl" }} fontWeight="800" color="gray.900">{brand}</Heading>
         </Box>
         <Text color="gray.600" fontWeight="semibold">{items.length} Products</Text>
       </Stack>

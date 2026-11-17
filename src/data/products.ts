@@ -1,10 +1,10 @@
 import breakfast from "../assets/patla.jpg";
 import hotel from "../assets/hotel.jpg";
 import namkeen from "../assets/mota.png";
-import roasted from "../assets/patla1.jpg";
+import roasted from "../assets/roasted-poha.png";
 import mithasPack from "../assets/packing.jpeg";
-import amritKalash from "../assets/poha.png";
-import amritKalashSika from "../assets/sketch.jpg";
+import amritKalash from "../assets/amrit-kalash-poha.png";
+import amritKalashSika from "../assets/amrit-kalash-roasted-poha.png";
 
 export interface PohaProduct {
   brand: "Mithas" | "Amrit Kalash";
@@ -42,11 +42,11 @@ export const products: PohaProduct[] = [
   },
   {
     brand: "Mithas",
-    name: "Namkeen Special Poha",
+    name: "Namkeen Special Poha (Mota / Dagdi Poha)",
     slug: "namkeen-special-poha",
     image: namkeen,
     description:
-      "A versatile, crisp poha variety suited to namkeen makers and snack preparations.",
+      "Also known as Mota / Dagdi Poha, this crisp variety is suited to namkeen making and frying.",
     features: ["Crisp texture", "Versatile for snack recipes", "Made for namkeen preparations"],
     applications: ["Poha chivda", "Namkeen", "Savory snacks"],
     packaging: "Contact us for current pack sizes and availability.",
@@ -86,12 +86,12 @@ export const products: PohaProduct[] = [
   },
   {
     brand: "Amrit Kalash",
-    name: "Amrit Kalash Sika Poha",
+    name: "Amrit Kalash Sika / Bhajka Poha",
     slug: "amrit-kalash-sika-poha",
     image: amritKalashSika,
     description:
-      "The Sika Poha variety from Amrit Kalash, available for customers seeking this specialty selection.",
-    features: ["Amrit Kalash Sika variety", "Distinct product selection", "Suitable for poha preparations"],
+      "Amrit Kalash Sika and Bhajka Poha varieties for customers seeking specialty poha.",
+    features: ["Sika and Bhajka varieties", "Distinct product selection", "Suitable for poha preparations"],
     applications: ["Breakfast", "Poha recipes", "Everyday cooking"],
     packaging: "Contact us for current pack sizes and availability.",
   },
